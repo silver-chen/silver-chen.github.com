@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://silver-chen.github.com/atom.xml" rel="self"/>
   <link href="http://silver-chen.github.com/"/>
-  <updated>2012-07-20T16:28:34+08:00</updated>
+  <updated>2012-07-20T16:51:40+08:00</updated>
   <id>http://silver-chen.github.com/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,5 +12,14 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hello Octopress]]></title>
+    <link href="http://silver-chen.github.com/blog/2012/07/20/hello-octopress/"/>
+    <updated>2012-07-20T16:48:00+08:00</updated>
+    <id>http://silver-chen.github.com/blog/2012/07/20/hello-octopress</id>
+    <content type="html"><![CDATA[<p>我的<strong>第一篇</strong>Octopress Blog!</p>
+]]></content>
+  </entry>
   
 </feed>
