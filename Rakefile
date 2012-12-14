@@ -7,8 +7,13 @@ require "stringex"
 ssh_user       = "user@domain.com"
 ssh_port       = "22"
 document_root  = "~/website.com/"
+# <<<<<<< HEAD
 rsync_delete   = true
 deploy_default = "push"
+# =======
+# rsync_delete   = false
+# deploy_default = "rsync"
+# >>>>>>> 22105bebc9ea53fc177d369a6522d8c4f9d51167
 
 # This will be configured for you when you run config_deploy
 deploy_branch  = "master"
@@ -151,7 +156,7 @@ task :new_page, :filename do |t, args|
 end
 
 # usage rake isolate[my-post]
-desc "Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much quicker."
+desc "Move all other posts than the one currently being worked on to a temporary stash location (stash) so regenerating the site happens much more quickly."
 task :isolate, :filename do |t, args|
   stash_dir = "#{source_dir}/#{stash_dir}"
   FileUtils.mkdir(stash_dir) unless File.exist?(stash_dir)
@@ -299,7 +304,9 @@ task :setup_github_pages, :repo do |t, args|
   if args.repo
     repo_url = args.repo
   else
-    repo_url = get_stdin("Enter the read/write url for your repository: ")
+    puts "Enter the read/write url for your repository" 
+    puts "(For example, 'git@github.com:your_username/your_username.github.com)"
+    repo_url = get_stdin("Repository url: ")
   end
   user = repo_url.match(/:([^\/]+)/)[1]
   branch = (repo_url.match(/\/[\w-]+.github.com/).nil?) ? 'gh-pages' : 'master'
